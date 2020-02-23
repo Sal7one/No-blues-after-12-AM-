@@ -1,6 +1,7 @@
 //Get date and hours
 var date = new Date();
 var hours = date.getHours();
+var found = false;
 
 //Between 12 AM and 6 AM  no blues for you :(( 
 if (hours > 0 && hours < 6) {
@@ -13,7 +14,7 @@ if (hours > 0 && hours < 6) {
     function Searchforblues(element) {
 
         //If the document has a child then get it's child! 
-        if (element.hasChildNodes()) {
+        if (element.hasChildNodes() && !found) {
 
             //Callback the function with the new child of a child
             element.childNodes.forEach(Searchforblues)
@@ -23,9 +24,9 @@ if (hours > 0 && hours < 6) {
             //Check if the text content of the child has blues in it!
             if (element.textContent.match(/blues/gi)) {
                 //Do whatever you want to stop yourself from falling in love and listenting to blues.
+                found = true;
                 alert("No blues for you! Get some sleep, Here's some rain to make you chill :D");
                 window.location.href = 'https://rainymood.com/';
-                return 0;
             }
         }
     }
