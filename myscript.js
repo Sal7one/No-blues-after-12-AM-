@@ -25,7 +25,7 @@ if (hours > 0 && hours < 6) {
                 //Do whatever you want to stop yourself from falling in love and listenting to blues.
                 alert("No blues for you! Get some sleep, Here's some rain to make you chill :D");
                 window.location.href = 'https://rainymood.com/';
-
+                return 0;
             }
         }
     }
